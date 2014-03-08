@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Test whether a graph is bipartite. If so, return the two vertex sets.
 % A bipartite graph is a graph for which the nodes can be split in two sets A and B, 
 % such that there are no edges that connect nodes within A or within B.
@@ -8,7 +8,7 @@
 %
 % Note: This only works for undirected graphs.
 % GB: last updated, Sep 24, 2012
-##################################################################
+%##################################################################
 
 function [isit,A,B]=isBipartite(L)
 

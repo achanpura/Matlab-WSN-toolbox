@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Convert a string graph representation to an adjacency matrix
 %                                          (see also adj2str.m)
 %
@@ -10,7 +10,7 @@
 % Note 3: The string nomenclature is arbitrarily chosen.
 %
 % GB: last updated, Sep 25, 2012
-##################################################################
+%##################################################################
 
 function adj = str2adj(str)
 

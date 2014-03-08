@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Construct a graph with an exponential degree distribution.
 % Probability of node s having k links at time t: 
 %    p(k,s,t)=1/t*p(k-1,s,t-1)+(1-1/t)*p(k,s,t-1)
@@ -7,7 +7,7 @@
 % OUTPUTs: edge list, mx3
 %
 % GB, last updated: Nov 11, 2012
-##################################################################
+%##################################################################
 
 function el=exponentialGrowthModel(t)
 

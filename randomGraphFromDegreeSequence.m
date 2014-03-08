@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Constructing a random graph based on a given degree sequence.
 % Idea source: Molloy M. & Reed, B. (1995) Random Structures and Algorithms 6, 161-179
 % 
@@ -11,7 +11,7 @@
 %
 % Other routines used: adj2edgeL.m, rewireThisEdge.m, edgeL2adj.m
 % GB: last updated, Oct 25 2012
-##################################################################
+%##################################################################
 
 
 function adj= randomGraphFromDegreeSequence(Nseq)

@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Compute the rich club metric for a graph.
 % Source: Colizza, Flammini, Serrano, Vespignani, "Detecting rich-club ordering in complex networks", Nature Physics, vol 2, Feb 2006
 % 
@@ -7,7 +7,7 @@
 %
 % Other routines used: degrees.m, subgraph.m, numEdges.m
 % GB: last updated, October 1, 2012
-##################################################################
+%##################################################################
 
 function phi=richClubMetric(adj,k)
 

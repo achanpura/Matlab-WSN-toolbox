@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Calculate the number of connected components using the eigenvalues
 %                   of the Laplacian - counting the number of zeros
 %
@@ -7,7 +7,7 @@
 %
 % Other routines used: graphSpectrum.m
 % GB: last updated: September 22, 2012
-##################################################################
+%##################################################################
 
 function nc=numConnComp(adj)
 

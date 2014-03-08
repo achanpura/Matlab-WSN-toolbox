@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Construct the graph with the maximum possible s-metric, given the degree
 % sequence; the s-metric is the sum of products of degrees across all edges
 % Source: Li et al "Towards a Theory of Scale-Free Graphs"
@@ -7,7 +7,7 @@
 % OUTPUTs: edge list of the s-max graph, mx3
 %
 % GB: last updated, November 9 2012
-##################################################################
+%##################################################################
 
 function gA=buildSmaxGraph(deg)
 

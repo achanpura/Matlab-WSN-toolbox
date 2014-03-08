@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Implementation of breadth-first-search of a graph.
 % Returns a breadth-first-search tree.
 %
@@ -6,7 +6,7 @@
 % OUTPUTs: BFS tree, in adjacency list {} format (directed)
 %
 % GB: last updated, Oct 7 2012
-##################################################################
+%##################################################################
 
 function T=BFS(adjL,i0)
 

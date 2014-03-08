@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Plot a graph for which nodes have given coordinates. Apply color
 %           scheme and thicker lines if edges have varying weights.
 %
@@ -9,7 +9,7 @@
 % Note 2: Easy to change colors and corresponding edge weight coloring
 %
 % GB: last updated: December 8, 2012
-##################################################################
+%##################################################################
 
 function []=el2geom(el)
 

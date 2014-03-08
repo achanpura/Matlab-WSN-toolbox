@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Routine implementing the Price model for network growth
 % Notes:
 %   p_k - fraction of vertices with degree k
@@ -10,7 +10,7 @@
 % OUTPUTs: adjacency matrix, directed
 %
 % GB: last modified, November 9, 2012
-##################################################################
+%##################################################################
 
 function adj = PriceModel(n)
 

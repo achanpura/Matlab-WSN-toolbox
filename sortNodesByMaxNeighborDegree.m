@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Sort nodes by degree, and where there's equality, by maximum neighbor degree
 % Ideas from Guo, Chen, Zhou, "Fingerprint for Network Topologies"
 %
@@ -7,7 +7,7 @@
 %
 % Other routines used: degrees.m, kneighbors.m
 % GB: last updated, Oct 4, 2012
-##################################################################
+%##################################################################
 
 function I=sortNodesByMaxNeighborDegree(adj)
 

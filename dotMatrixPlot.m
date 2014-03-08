@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Draws the matrix as a column/row sorted square dot-matrix pattern
 %
 % INPUTs: adj (nxn) - adjacency matrix representation of the graph
@@ -11,7 +11,7 @@
 %                      eigenCentrality.m, newmanEigenvectorMethod.m,
 %                      nodeBetweennessFaster.m, newmanGirvan.m
 % GB: last updated, November 25 2012
-##################################################################
+%##################################################################
 
 function [] = dotMatrixPlot(adj)
 

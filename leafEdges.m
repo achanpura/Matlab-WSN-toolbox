@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Returns the leaf edges of the graph: edges with one adjacent edge only.
 %
 % Note 1: For a directed graph, leaf edges are those that "flow into" a leaf node.
@@ -10,7 +10,7 @@
 % Output: set of leaf edges: a (num edges x 2) matrix where every row contains the leaf edge nodal indices
 %
 % GB: last updated, Sep 23, 2012
-##################################################################
+%##################################################################
 
 
 function edges=leafEdges(adj)

@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Graph energy defined as: the sum of the absolute values of the 
 %      real components of the eigenvalues of the adjacency matrix.
 % Source: Gutman, The energy of a graph, Ber. Math. Statist. 
@@ -8,7 +8,7 @@
 % OUTPUTs: graph energy
 %
 % GB: last updated, Oct 10 2012
-##################################################################
+%##################################################################
 
 function G=graphEnergy(adj)
 

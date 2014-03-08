@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Betweenness centrality measure: number of shortest paths running through a vertex.
 % Compute for all vertices, using Dijkstra's algorithm, and the number
 %                        of shortest paths through a node' definition.
@@ -14,7 +14,7 @@
 %
 % Other routines used: dijkstra.m
 % GB: June 4 2013
-##################################################################
+%##################################################################
 
 function betw = nodeBetweennessFaster(adj)
 

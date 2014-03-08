@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Finds the number of "kmin"-neighbors (k links away at a minimum) for every node
 % If nodes are k-links away due to loops (so they appear as m-neighbours, m<k), 
 %                                                            they are not counted
@@ -7,7 +7,7 @@
 % OUTPUTS: vector of "kmin"-neighbor indices
 %
 % GB: last update, Oct 7 2012
-##################################################################
+%##################################################################
 
 function kneigh = kminNeighbors(adj,ind,k)
 

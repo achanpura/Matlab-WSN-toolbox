@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Extract the giant component of a graph;
 % The giant component is the largest connected component.
 % 
@@ -7,7 +7,7 @@
 %
 % Other routines used: findConnComp.m, subgraph.m
 % GB: last updated: September 22, 2012
-##################################################################
+%##################################################################
 
 
 function [GC,gc_nodes]=giantComponent(adj)

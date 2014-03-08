@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Returns the list of edges for graph varying representation types
 % Inputs: graph structure (matrix or cell or struct) and type of structure (string)
 % Outputs: edge list, mx3 matrix, where the third column is edge weight
@@ -16,7 +16,7 @@
 %                     0  1 -1]
 %
 % GB: last updated, Sep 18 2012
-##################################################################
+%##################################################################
 
 
 function edges = getEdges(graph,type)

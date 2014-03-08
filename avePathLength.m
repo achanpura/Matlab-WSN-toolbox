@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Compute average path length for a network - the average shortest path
 % Note: works for directed/undirected networks 
 %
@@ -7,7 +7,7 @@
 %
 % Other routines used: simpleDijkstra.m 
 % GB: Oct 8, 2012
-##################################################################
+%##################################################################
 
 function l = avePathLength(adj)
 

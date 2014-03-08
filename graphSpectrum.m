@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % The eigenvalues of the Laplacian of the graph.
 %
 % INPUTs: adjacency matrix, nxn
@@ -6,7 +6,7 @@
 %
 % Other routines used: laplacianMatrix.m
 % GB: last updated, Oct 10 2012
-##################################################################
+%##################################################################
 
 function s=graphSpectrum(adj)
 

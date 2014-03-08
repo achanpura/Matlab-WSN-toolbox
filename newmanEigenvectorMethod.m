@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Find the "optimal" number of communities given a network using an eigenvector method
 % Source: MEJ Newman: Finding community structure using the eigenvectors of matrices, 
 %                                                               arXiv:physics/0605087
@@ -18,7 +18,7 @@
 % 
 % Other functions used: numEdges.m, degrees.m, subgraph.m, isConnected.m
 % GB: last modified, Oct 12, 2012
-##################################################################
+%##################################################################
 
 function modules=newmanEigenvectorMethod(adj)
 

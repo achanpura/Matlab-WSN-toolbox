@@ -1,11 +1,11 @@
-##################################################################
+%##################################################################
 % Convert an incidence matrix representation to an adjacency matrix representation for an arbitrary graph.
 %
 % INPUTs: incidence matrix, nxm (num nodes x num edges)
 % OUTPUTs: adjacency matrix, nxn
 %
 % GB: last updated, Sep 25, 2012
-##################################################################
+%##################################################################
 
 
 function adj = inc2adj(inc)

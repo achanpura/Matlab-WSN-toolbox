@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Convert an edge list structure m x [node 1, node 2, link] to 
 %    Cytoscape input format (.txt or any text extension works)
 %
@@ -7,7 +7,7 @@
 %
 % INPUTs: edge list - mx3 matrix, m = number of edges, file name text string
 % OUTPUTs: text file in Cytoscape format with a semicolon column separator
-##################################################################
+%##################################################################
 
 function [ ]=edgeL2cyto(el,filename)
 

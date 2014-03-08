@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Check whether a graph is complete, i.e. whether every node is linked to every other node.
 %
 % INPUTS: adjacency matrix, nxn
@@ -6,7 +6,7 @@
 %
 % Note: Only defined for unweighted graphs.
 % GB: last updated, Sep 23, 2012
-##################################################################
+%##################################################################
 
 function S=isComplete(adj)
 

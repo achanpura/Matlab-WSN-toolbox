@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Find the connected component to which node "i" belongs to
 %
 % INPUTS: adjacency matrix and index of the key node
@@ -8,7 +8,7 @@
 % Note: Only works for undirected graphs.
 % Other functions used: kneighbors.m
 % GB: last updated, Sep 22 2012
-##################################################################
+%##################################################################
 
 
 function comp=findConnCompI(adj,i)

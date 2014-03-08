@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Degree-preserving random rewiring
 % Every rewiring increases the assortativity (pearson coefficient).
 %
@@ -10,7 +10,7 @@
 %
 % Other routines used: degrees.m
 % GB: last updated, Sep 27 2012
-##################################################################
+%##################################################################
 
 function el = rewireAssort(el,k)
 

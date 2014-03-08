@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Build edge lists for simple canonical graphs, ex: trees and lattices 
 %
 % INPUTS: number of nodes, network type, branch factor (for trees only).
@@ -9,7 +9,7 @@
 % Note: Produces undirected graphs, i.e. symmetric edge lists.
 % Other functions used: symmetrizeEdgeL.m, adj2edgeL.m
 % GB: last updated: Oct 27 2012
-##################################################################
+%##################################################################
 
 
 function el=canonicalNets(n,type,b)

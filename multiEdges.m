@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Counts the number of multiple edges in the graph
 % Multiple edges here are defined as two or more edges that have the same origin and destination nodes. 
 % Note 1: This creates a natural difference in counting for undirected and directed graphs.
@@ -12,7 +12,7 @@
 % would be: mA = length(find(adj>1)) (normalized by 2 depending on whether the graph is directed)
 %
 % GB: last updated, Sep 20 2012
-##################################################################
+%##################################################################
 
 
 function mE=multiEdges(adj)

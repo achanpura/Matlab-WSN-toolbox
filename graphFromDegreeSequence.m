@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Constructing a graph from a given degree sequence: deterministic
 % Note: This is the Havel-Hakimi algorithm.
 %
@@ -7,7 +7,7 @@
 % Outputs: adjacency matrix, nxn
 %
 % GB: last updated, Oct 21 2012
-##################################################################
+%##################################################################
 
 function adj = graphFromDegreeSequence(seq)
 

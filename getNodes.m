@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Returns the list of nodes for varying graph representation types
 % Inputs: graph structure (matrix or cell or struct) and type of structure (string)
 %        'type' can be: 'adj','edgelist','adjlist' (neighbor list),'inc' (incidence matrix)
@@ -14,7 +14,7 @@
 %                     0  1 -1]
 %
 % GB: last updated, Sep 18 2012
-##################################################################
+%##################################################################
 
 function nodes = getNodes(graph,type)
 

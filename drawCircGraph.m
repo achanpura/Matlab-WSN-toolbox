@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Draw a circular representation of a graph with the nodes ordered by degree
 % Strategy: position vertices in a regular n-polygon
 %
@@ -7,7 +7,7 @@
 %
 % Other routines used: degrees.m
 % GB: last updated, Nov 29 2012
-##################################################################
+%##################################################################
 
 function [] = drawCircGraph(adj)
 

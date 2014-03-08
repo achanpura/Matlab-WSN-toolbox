@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Weighted clustering coefficient.
 % Source: Barrat et al, The architecture of complex weighted networks
 %
@@ -7,7 +7,7 @@
 %
 % Other routines used: degrees.m, kneighbors.m
 % GB: last updated, Sep 30 2012
-##################################################################
+%##################################################################
 
 function wC=weightedClustCoeff(adj)
 

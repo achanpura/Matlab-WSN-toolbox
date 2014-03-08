@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Count the number of connected triples in a graph.
 % Note: works for undirected graphs only
 %
@@ -7,7 +7,7 @@
 %
 % Other routines used: kneighbors.m, loops3.m
 % GB: last updated, October 4, 2012
-##################################################################
+%##################################################################
 
 function c=numConnTriples(adj)
 

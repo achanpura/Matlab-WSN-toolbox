@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Based on: Sales-Pardo et al, "Extracting the hierarchical organization 
 %                of complex systems", PNAS, Sep 25, 2007; vol.104; no.39 
 % Supplementary material: 
@@ -14,7 +14,7 @@
 %
 % Other routines used: symmetrizeEdgeL.m
 % GB: last updated, November 24 2012
-##################################################################
+%##################################################################
 
 
 function eL = nestedHierarchiesModel(N,L,G,kbar,rho)

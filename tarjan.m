@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Find the stronly connected components in a directed graph
 % Source: Tarjan, R. E. (1972), "Depth-first search and linear graph algorithms", SIAM Journal on Computing 1 (2): 146-160
 % Wikipedia description: http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm
@@ -9,7 +9,7 @@
 %
 % Other routines used: strongConnComp.m
 % GB: last updated, Sep 22, 2012
-##################################################################
+%##################################################################
 
 function [GSCC,v] = tarjan(L)
 

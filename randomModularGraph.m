@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Build a random modular graph, given number of modules, and link densities
 %
 % INPUTs: number of nodes (n), number of modules (c), total link density (p),
@@ -7,7 +7,7 @@
 % OUTPUTs: adjacency matrix, modules to which the nodes are assigned
 %
 % GB: last updated, November 4, 2012
-##################################################################
+%##################################################################
 
 function [adj, modules] = randomModularGraph(n,c,p,r)
 

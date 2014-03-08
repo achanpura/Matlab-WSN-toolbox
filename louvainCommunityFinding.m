@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Implementation of a community finding algorithm by Blondel et al
 % Source: "Fast unfolding of communities in large networks", July 2008
 %          https://sites.google.com/site/findcommunities/
@@ -15,7 +15,7 @@
 %
 % Other routines used: numEdges.m, kneighbors.m
 % GB: last updated, Oct 17 2012
-##################################################################
+%##################################################################
 
 function [modules,inmodule] = louvainCommunityFinding(adj)
 

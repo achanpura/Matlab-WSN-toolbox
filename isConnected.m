@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Determine if a graph is connected
 % Idea by Ed Scheinerman, circa 2006, source: http://www.ams.jhu.edu/~ers/matgraph/
 %                                     routine: matgraph/@graph/isconnected.m
@@ -8,7 +8,7 @@
 %
 % Note: This function works only for undirected graphs.
 % GB: last updated, Sep 23 2012
-##################################################################
+%##################################################################
 
 function S = isConnected(adj)
 

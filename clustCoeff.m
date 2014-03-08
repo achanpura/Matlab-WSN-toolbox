@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Compute two clustering coefficients, based on triangle motifs count and local clustering
 % C1 = number of triangle loops / number of connected triples
 % C2 = the average local clustering, where Ci = (number of triangles connected to i) / (number of triples centered on i)
@@ -11,7 +11,7 @@
 % Other routines used: degrees.m, isDirected.m, kneighbors.m, numEdges.m, subgraph.m, loops3.m, numConnTriples.m
 % GB, Last updated: Mar 1, 2014
 % Input [in definition of C1] by Dimitris Maniadakis.
-##################################################################
+%##################################################################
 
 function [C1,C2] = clustCoeff(adj)
 

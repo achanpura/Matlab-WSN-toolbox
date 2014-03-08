@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Fast community finding algorithm by M. Newman
 % Source: "Fast algorithm for detecting community 
 %                   structure in networks", Mark Newman
@@ -12,7 +12,7 @@
 %       uncomment "print newmanCommFast_example.pdf"
 %
 % GB: last updated, Oct 12 2012
-##################################################################
+%##################################################################
 
 function [groups_hist,Q]=newmanCommFast(adj)
 

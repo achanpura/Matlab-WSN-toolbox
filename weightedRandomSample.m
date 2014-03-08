@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Weighted random sampling.
 % 
 % INPUTs: number of draws from a discrete distribution (n)
@@ -8,7 +8,7 @@
 %              according to the weights in W
 %
 % GB: last updated, Oct 31 2012
-##################################################################
+%##################################################################
 
 
 function s = weightedRandomSample(n,P,W)

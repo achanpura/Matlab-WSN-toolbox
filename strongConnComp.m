@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Support function for tarjan.m
 % "Performs a single depth-first search of the graph, finding all
 % successors from the node vi, and reporting all strongly connected
@@ -12,7 +12,7 @@
 % 
 % Note: Contains recursion.
 % GB: last updated, Sep 22 2012
-##################################################################
+%##################################################################
 
 function [GSCC,S,ind,v]=strongConnComp(vi,S,ind,v,L,GSCC)
 

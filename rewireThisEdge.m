@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Degree-preserving rewiring of 1 given edge.
 % Note 1: Assume unweighted undirected graph.
 % 
@@ -10,7 +10,7 @@
 % 
 % Other routines used: edgeL2adj.m, kneighbors.m
 % GB: last updated, Oct 25, 2012
-##################################################################
+%##################################################################
 
 function el = rewireThisEdge(el,i1,i2)
 

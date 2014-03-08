@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Implements the network growth model from: Fabrikant et al, 
 %                  "Heuristically Optimized Trade-offs: A New Paradigm
 %                                       for Power Laws in the Internet"
@@ -10,7 +10,7 @@
 %
 % Other functions used: simpleDijkstra.m
 % GB: last updated: November 14, 2012
-##################################################################
+%##################################################################
 
 function [adj,p]=fabrikantModel(n,alpha,plt)
 

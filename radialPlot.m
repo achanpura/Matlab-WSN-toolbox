@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Plot nodes radially out from a given center. Equidistant nodes
 % have the same radius, but different angles. Works best as a quick
 % visualization for trees, or very sparse graphs.
@@ -15,7 +15,7 @@
 % Other routines used: sortNodesBySumNeighborDegrees.m,
 %                      adj2adjL.m, diameter.m, kminNeighbors.m
 % GB: last updated, December 6 2012
-##################################################################
+%##################################################################
 
 
 function [] = radialPlot(adj,i0)

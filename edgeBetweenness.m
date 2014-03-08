@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Edge betweenness routine, based on shortest paths.
 % Source: Newman, Girvan, "Finding and evaluating community structure in networks"
 % Note: Valid for undirected graphs only.
@@ -8,7 +8,7 @@
 %
 % Other routines used: adj2edgeL.m, numNodes.m, numEdges.m, kneighbors.m
 % GB: last modified, Sep 29, 2012
-##################################################################
+%##################################################################
 
 
 function ew = edgeBetweenness(adj)

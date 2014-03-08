@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Algorithm for finding connected components in a graph
 % Note: Valid for undirected graphs only
 %
@@ -7,7 +7,7 @@
 %
 % Other routines used: findConnCompI.m, degrees.m
 % GB: last updated, September 22, 2012
-##################################################################
+%##################################################################
 
 
 function comp_mat = findConnComp(adj)

@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Checks whether the graph is directed, using the matrix transpose function
 %
 % INPUTS: adjacency matrix, nxn
@@ -6,7 +6,7 @@
 %
 % Note: one-liner alternative: S=not(issymmetric(adj));
 % GB: last updated, Sep 23, 2012
-##################################################################
+%##################################################################
 
 function S=isDirected(adj)
 

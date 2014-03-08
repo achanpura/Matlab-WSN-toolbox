@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Uses the fiedler vector to assign nodes to groups.
 %
 % INPUTS: adjacency matrix (nxn), k - desired number 
@@ -13,7 +13,7 @@
 % Note: To save the plot at the end of the routine, uncomment:
 %                   print filename.pdf (or filename.extension)
 % GB: last updated, Oct 10 2012
-##################################################################
+%##################################################################
 
 function modules = simpleSpectralPartitioning(adj,k)
 

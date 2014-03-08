@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Calculate the number of independent loops (use G=m-n+c)
 %      where G = num loops, m - num edges, n - num nodes, 
 %                      c - number of connected components
@@ -10,7 +10,7 @@
 %
 % Other routines used: numNodes.m, numEdges.m, findConnComp.m
 % GB: last updated, Oct 5 2012
-##################################################################
+%##################################################################
 
 function G = numLoops(adj)
 

@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % The number of pairs of nodes at a distance x, 
 %                      divided by the total number of pairs n(n-1)
 % Source: Mahadevan et al, "Systematic Topology Analysis and
@@ -12,7 +12,7 @@
 %
 % Other routines used: simpleDijkstra.m
 % GB: last updated, Oct 10 2012
-##################################################################
+%##################################################################
 
 function ddist=distanceDistribution(adj)
 

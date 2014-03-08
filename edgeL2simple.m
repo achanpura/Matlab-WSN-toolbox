@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Convert an edge list of a general graph to the edge list of a 
 % simple graph (no loops, no double edges, no edge weights, symmetric)
 %
@@ -7,7 +7,7 @@
 %
 % Note: Assumes all node pairs [n1,n2,x] occur once; if else see addEdgeWeights.m
 % GB: last updated, Sep 25, 2012
-##################################################################
+%##################################################################
 
 function el=edgeL2simple(el)
 

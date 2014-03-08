@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % Construct a random graph given a degree distribution.
 % The algorithm first generates the degree sequence by
 %       drawing numbers from the specified distribution.
@@ -15,7 +15,7 @@
 % Other routines used: isGraphic.m, weightedRandomSample.m, 
 %                          randomGraphFromDegreeSequence.m
 % GB: last updated, Oct 31 2012
-##################################################################
+%##################################################################
  
 
 function adj = randomGraphDegreeDist(n,distribution,W)

@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % The minimum vertex eccentricity is the graph radius.
 %
 % Inputs: adjacency matrix (nxn)
@@ -6,7 +6,7 @@
 %
 % Other routines used: vertexEccentricity.m
 % GB: last updated, Oct 10 2012
-##################################################################
+%##################################################################
 
 function Rg=graphRadius(adj)
 

@@ -1,4 +1,4 @@
-##################################################################
+%##################################################################
 % The longest shortest path between any two nodes nodes in the network.
 %
 % INPUTS: adjacency matrix, nxn
@@ -6,7 +6,7 @@
 %
 % Other routines used: simpleDijkstra.m
 % GB: last updated, Oct 8 2012
-##################################################################
+%##################################################################
 
 function diam = diameter(adj)
 
