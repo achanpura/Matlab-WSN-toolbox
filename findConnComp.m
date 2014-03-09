@@ -6,7 +6,9 @@
 % OUTPUTS: a list of the components comp{i}=[j1,j2,...jk]
 %
 % Other routines used: findConnCompI.m, degrees.m
-% GB: last updated, September 22, 2012
+
+% Update: minor optimizations
+% IB: last updated, 3/9/14
 %##################################################################
 
 
@@ -18,20 +20,18 @@ comp_mat={};                       % initialize components matrix
 for i=1:length(deg)
     if deg(i)>0
         done=0;
-        for x=1:length(comp_mat)
-            if length(find(comp_mat{x}==i))>0   % i in comp_mat(x).mat
+        for j=1:length(comp_mat)
+            if any(comp_mat{j}==i)   % i in comp_mat(x).mat
                 done=1;
                 break
             end
         end
         if not(done)
             comp=findConnCompI(adj,i);
-            comp_mat{length(comp_mat)+1}=comp;
+            comp_mat{length(comp_mat)+1}=comp; %#ok<AGROW>
         end
         
     elseif deg(i)==0
-        comp_mat{length(comp_mat)+1}=[i];
-    end
-
-    
+        comp_mat{length(comp_mat)+1}=i; %#ok<AGROW>
+    end    
 end

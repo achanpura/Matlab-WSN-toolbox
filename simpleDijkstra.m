@@ -6,7 +6,11 @@
 % OUTPUTS: shortest path length from the start node to all other nodes, 1xn
 %
 % Note: Works for a weighted/directed graph.
-% GB: last updated, September 28, 2012
+
+% Updated 3/8/14: increased efficency 10x by unrolling for loop, removing
+% setdiff.
+
+% IB: Last updated, 3/4/14
 %##################################################################
 
 function d = simpleDijkstra(adj,s)
@@ -17,11 +21,11 @@ d(s) = 0;    % s-s distance
 T = 1:n;    % node set with shortest paths not found yet
 
 while not(isempty(T))
-    [dmin,ind] = min(d(T));
-    for j=1:length(T)
-        if adj(T(ind),T(j))>0 & d(T(j))>d(T(ind))+adj(T(ind),T(j))
-            d(T(j))=d(T(ind))+adj(T(ind),T(j));
-        end
-    end 
-    T = setdiff(T,T(ind));
+    [~,ind] = min(d(T));
+    
+    idx_update = find(adj(T(ind), T) > 0 & d(T) > d(T(ind)) + adj(T(ind), T));
+    if(~isempty(idx_update))
+        d(T(idx_update)) = d(T(ind)) + adj(T(ind), T(idx_update));
+    end    
+    T(ind) = [];
 end

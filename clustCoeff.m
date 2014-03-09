@@ -9,11 +9,14 @@
 % OUTPUT: two graph average clustering coefficients (C1, C2) and clustering coefficient vector C (where mean(C) = C2)
 %
 % Other routines used: degrees.m, isDirected.m, kneighbors.m, numEdges.m, subgraph.m, loops3.m, numConnTriples.m
-% GB, Last updated: Mar 1, 2014
+
+% Updated: Returns C vector of clustering coefficients.
+
+% IB, Last updated: 3/9/2014
 % Input [in definition of C1] by Dimitris Maniadakis.
 %##################################################################
 
-function [C1,C2] = clustCoeff(adj)
+function [C1,C2, C] = clustCoeff(adj)
 
 n = length(adj);
 adj = adj>0;  % no multiple edges
@@ -26,7 +29,7 @@ if isDirected(adj); coeff=1; end
 
 for i=1:n
   
-  if deg(i)==1 | deg(i)==0; C(i)=0; continue; end
+  if deg(i)==1 || deg(i)==0; C(i)=0; continue; end
 
   neigh=kneighbors(adj,i,1);
   edges_s=numEdges(subgraph(adj,neigh));
