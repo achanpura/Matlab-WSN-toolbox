@@ -1,20 +1,17 @@
-%##################################################################
-% Algorithm for finding connected components in a graph
+function comp_mat = findConnComp(A)
+%FINDCONNCOMP Find connected components in a graph
 % Note: Valid for undirected graphs only
 %
-% INPUTS: adj - adjacency matrix, nxn
-% OUTPUTS: a list of the components comp{i}=[j1,j2,...jk]
-%
+% @input A, an NxN adjacency matrix
+% @output comp_mat, a cell array where each element is a list of nodes in
+% the component.
+
 % Other routines used: findConnCompI.m, degrees.m
 
-% Update: minor optimizations
-% IB: last updated, 3/9/14
-%##################################################################
+% Update: minor optimizations, documentation format
+% IB: last updated, 3/23/14
 
-
-function comp_mat = findConnComp(adj)
-
-[deg,~,~]=degrees(adj);            % degrees
+[deg,~,~]=degrees(A);            % degrees
 comp_mat={};                       % initialize components matrix
 
 for i=1:length(deg)
@@ -27,7 +24,7 @@ for i=1:length(deg)
             end
         end
         if not(done)
-            comp=findConnCompI(adj,i);
+            comp=findConnCompI(A,i)';
             comp_mat{length(comp_mat)+1}=comp; %#ok<AGROW>
         end
         
