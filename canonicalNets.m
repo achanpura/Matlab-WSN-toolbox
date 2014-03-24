@@ -1,18 +1,18 @@
-%##################################################################
-% Build edge lists for simple canonical graphs, ex: trees and lattices 
+function el=canonicalNets(n,type,b)
+%CANONICALNETS Build edge lists for simple canonical graphs, ex: trees and lattices 
 %
-% INPUTS: number of nodes, network type, branch factor (for trees only).
-%         Network types can be 'line','circle','star','btree','tree',
-%            'hierarchy','trilattice','sqlattice','hexlattice', 'clique'
-% OUTPUTS: edge list (mx3)
+%   @input n, number of nodes
+%   @input type, string of network type, Network types can be 'line','circle','star','btree','tree','hierarchy','trilattice','sqlattice','hexlattice', 'clique'
+%   @input b, branching factor b (scalar)
+%   @output el, Mx3 edge list
 %
 % Note: Produces undirected graphs, i.e. symmetric edge lists.
 % Other functions used: symmetrizeEdgeL.m, adj2edgeL.m
-% GB: last updated: Oct 27 2012
-%##################################################################
 
+% updated: fprintf, documentation
 
-function el=canonicalNets(n,type,b)
+% IB: last updated: 3/27/14
+
 
 if strcmp(type,'line')
     el=buildLine(n);
@@ -45,7 +45,7 @@ elseif strcmp(type,'hexlattice')
     el=buildHexagonalLattice(n);
     
 else
-  printf('invalid network type; see canonicalNets.m header\n');
+  fprintf('invalid network type; see canonicalNets.m header\n');
   return
 end
 

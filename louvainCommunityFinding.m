@@ -1,5 +1,10 @@
-%##################################################################
-% Implementation of a community finding algorithm by Blondel et al
+function [modules,inmodule] = louvainCommunityFinding(A)
+%LOUVAINCOMMUNITYFINDING Implementation of a community finding algorithm by Blondel et al
+
+% @input A, NxN adjacency matrix
+% @output modules, cell array of node groupings, each cell element contains a vector of node numbers
+% @output inmodule, a 1xN cell array of the node's affiliation
+
 % Source: "Fast unfolding of communities in large networks", July 2008
 %          https://sites.google.com/site/findcommunities/
 % Note 1: This is just the first step of the Louvain community finding 
@@ -10,20 +15,21 @@
 %         algorithm performance. Unfortunately, node order in this
 %         algorithm affects the results.
 %
-% INPUTs: adjancency matrix, nxn
-% OUTPUTs: modules, and node community labels (inmodule)
+
 %
 % Other routines used: numEdges.m, kneighbors.m
+
+% Updated: muted method.
 % GB: last updated, Oct 17 2012
 %##################################################################
 
-function [modules,inmodule] = louvainCommunityFinding(adj)
 
-m = numEdges(adj);
-n = numNodes(adj);
+
+m = numEdges(A);
+n = numNodes(A);
 
 inmodule = {};  % inmodule{node} = module
-for mm=1:length(adj); inmodule{mm} = mm; end;
+for mm=1:length(A); inmodule{mm} = mm; end;
 
 modules = inmodule; % equal only for this step; modules{ind} = [nodes in module]
 
@@ -42,7 +48,7 @@ while not(converged)
     
     i = perm(i);
         
-    neigh = kneighbors(adj,i,1);
+    neigh = kneighbors(A,i,1);
     dQ = zeros(1,length(neigh));
     
     c0 = inmodule{i};
@@ -53,7 +59,7 @@ while not(converged)
       % if dQs balance is positive, do move; else: move on
       
       c1 = inmodule{neigh(nei)};
-      dQ(nei) = dQi(i,c0,c1,adj,modules,m);
+      dQ(nei) = dQi(i,c0,c1,A,modules,m);
     
     end  % loop across all neighbors
     
@@ -69,16 +75,6 @@ while not(converged)
       
     end
     
-    % ====== print for debugging purposes =======================
-    %printf('current node %2i\n',i)
-    %printf('current dQ\n');
-    %dQ
-    %printf('based on dQ chose this neighbor: %2i\n',neigh(maxnei));
-    %printf('new modules\n');
-    %modules
-    %printf('new inmodule membership of i: %2i\n',inmodule{i});
-    % ===========================================================
-    
           
   end  % loop across all nodes
   
@@ -93,7 +89,7 @@ end
 
 modules=new_modules;
 
-printf('found %3i modules\n',length(modules));
+%fprintf('found %3i modules\n',length(modules));
 
 
 

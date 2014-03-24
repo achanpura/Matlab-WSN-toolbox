@@ -1,26 +1,21 @@
-%##################################################################
-% Construct a random graph given a degree distribution.
+function A_rand = randomGraphDegreeDist(n,distribution,W)
+%RANDOMGRAPHDEGREEDIST Construct a random graph given a degree distribution.
+
 % The algorithm first generates the degree sequence by
 %       drawing numbers from the specified distribution.
 %
-% INPUTs: number of nodes, n; distribution type, string
-%         "distribution" can be: 'uniform', 'normal',
-%         'binomial', 'exponential' and 'custom'
-%         if 'custom', W has to be specified: W is a set
-%         of probabilities, 1x(n-1), where W(i) is the
-%         probability of a node having degree "i". 
-%         sum(W) = 1
-% OUTPUTs: adjacency matrix of the random graph, nxn
+
+% @input n, scalar number of nodes
+% @input distribution, string of one of the following: 'uniform', 'normal', 'binomial', 'exponential' and 'custom'
+% @input W [optional], 1x(N-1) distribution, where W(i) is probability of a node having degree 'i', sum(W) = 1;
+% @output A_rand, a nxN adjacency matrix
 % 
 % Other routines used: isGraphic.m, weightedRandomSample.m, 
 %                          randomGraphFromDegreeSequence.m
 % GB: last updated, Oct 31 2012
-%##################################################################
- 
 
-function adj = randomGraphDegreeDist(n,distribution,W)
 
-adj = []; 
+A_rand = []; 
 Nseq=1;  % ensure the while loop start
          % always make sure Nseq is a graphic sequence
 
@@ -51,15 +46,15 @@ switch distribution
   
  case 'custom'
   
-  if nargin<3; printf('Need to specify a custom distribution.\n'); return; end
+  if nargin<3; fprintf('Need to specify a custom distribution.\n'); return; end
   while not(isGraphic(Nseq)); Nseq = weightedRandomSample(n,[1:n-1],W); end
 
  otherwise
   
-  printf('Invalid degree distribution type.\n')
+  fprintf('Invalid degree distribution type.\n')
   return
 
 end
 
 
-adj = randomGraphFromDegreeSequence(Nseq);
+A_rand = randomGraphFromDegreeSequence(Nseq);

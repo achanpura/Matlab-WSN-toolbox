@@ -1,24 +1,28 @@
-%##################################################################
-% Routine implementing simple preferential attachment for network growth.
+function el = preferentialAttachment(n,m)
+%PREFERENTIALATTACHMENT simple preferential attachment for network growth.
+
 % The probability that a new vertex attaches to a given old vertex
 %                           is proportional to the (total) vertex degree.
+
+% @input n final number of desired vertices
+% @input m # of edges to attach at each step
+% @output el, edge list in Mx3 format. 
+
 % Note 1: Vertices arrive one at a time.
 % Note 2: Assume undirected simple graph.
 % Source: Newman, "The Structure and Function of Complex Networks"
 %         B-A., "Emergence of Scaling in Random Networks"
-%
-% INPUTs: n - final (desired) number of vertices, 
-%         m - # edges to attach at every step
-% OUTPUTs: edge list, [number of edges x 3]
-%
+
 % Other routines used: weightedRandomSample.m
-% GB: last updated, November 9, 2012
+% Updated: fprintf, documentation
+
+% IB: last updated, 3/24/14
 %##################################################################
 
-function el = preferentialAttachment(n,m)
+
 
 vertices = 2;
-if not(vertices<=n); printf('Specify more than 2 nodes.\n');  return; end
+if not(vertices<=n); fprintf('Specify more than 2 nodes.\n');  return; end
 el=[1 2 1; 2 1 1];      % start with one edge
 
 

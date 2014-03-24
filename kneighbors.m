@@ -1,19 +1,20 @@
-%##################################################################
-% Finds the number of k-neighbors (k links away) for every node
+function neighbors = kneighbors(A,ind,k)
+%KNEIGHBORS Finds the adjacency list of nodes at distance k from 'ind'
 %
+% @input A, NxN adjacency matrix
+% @input ind, a scalar node # of the search index
+% @input k, a scalar for distance to search
+% @output neighbors, a adjacency list of nodes reachable from 'ind' in 'k' hops 
 % INPUTS: adjacency matrix (nxn), start node index, k - number of links
 % OUTPUTS: vector of k-neighbors indices
 %
 % Updated: For readability.
 
-% IB: last updated, 3/9/14
-%##################################################################
+% IB: last updated, 3/23/14
 
-function kneigh = kneighbors(adj,ind,k)
-
-adjk = adj;
+adjk = A;
 for i=1:k-1 
-    adjk = adjk*adj; 
+    adjk = adjk*A; 
 end;
 
-kneigh = find(adjk(ind,:)>0);
+neighbors = find(adjk(ind,:)>0);

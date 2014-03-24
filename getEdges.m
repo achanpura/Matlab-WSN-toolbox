@@ -1,7 +1,8 @@
-%##################################################################
-% Returns the list of edges for graph varying representation types
-% Inputs: graph structure (matrix or cell or struct) and type of structure (string)
-% Outputs: edge list, mx3 matrix, where the third column is edge weight
+function edges = getEdges(graph,type)
+%GETEDGES Returns the list of edges for graph varying representation types
+% @input graph, (multiple formats: adjacency matrix, adjacencylist, edgelist, inc) (see below)
+% @input type, a string specifier of the format type
+% @output edges, Mx3 edge list where third column is weight.
 % 
 % Note 1: 'type' can be: 'adj','edgelist','adjlist' (neighbor list), 'inc' (incidence matrix)
 % Note 2: symmetric edges will appear twice, also in undirected graphs, (i.e. [n1,n2] and [n2,n1])
@@ -15,11 +16,10 @@
 %                     1 -1  0
 %                     0  1 -1]
 %
-% GB: last updated, Sep 18 2012
-%##################################################################
+% Updated:  fprintf
+% IB: last updated, 3/24/14
 
 
-function edges = getEdges(graph,type)
 
 if strcmp(type,'adj')
     edges=sortrows(adj2edgeL(graph));
@@ -33,5 +33,5 @@ elseif strcmp(type,'adjlist')
 elseif strcmp(type,'inc')
     edges=sortrows(inc2edgeL(graph));
 else
-    printf('ERROR: "type" input can only be "adj" (adjacency, nxn matrix), "edgelist" (mx3 matrix)\n, "adjlist" (neighbor list, nx1 cell) and "inc" incidence (nxm matrix)\n')
+    fprintf('ERROR: "type" input can only be "adj" (adjacency, nxn matrix), "edgelist" (mx3 matrix)\n, "adjlist" (neighbor list, nx1 cell) and "inc" incidence (nxm matrix)\n')
 end

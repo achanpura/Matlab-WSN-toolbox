@@ -1,44 +1,49 @@
-%##################################################################
-% Plot nodes radially out from a given center. Equidistant nodes
+function [] = radialPlot(A,i0)
+% RADIALPLOT Plot nodes radially out from a given center. 
+
+% Equidistant nodes
 % have the same radius, but different angles. Works best as a quick
 % visualization for trees, or very sparse graphs.
 %
+% @input A, NxN adjacency matrix
+% @input i0 [optional], center node 
+
+% @output [None returned], figure created
+
+
 % Note 1: If a center node is not specified, the nodes are ordered by
 %   sum of neighbor degrees, and the node with highest sum is plotted
 %   in the center.
 % Note 2: The graph has to be connected.
 % Note 3: To change the color scheme, modify lines: 91, 98, 104 and 118
 %
-% Inputs: adjacency matrix (nxn), and center node (optional)
-% Outputs: plot
 %
 % Other routines used: sortNodesBySumNeighborDegrees.m,
 %                      adj2adjL.m, diameter.m, kminNeighbors.m
-% GB: last updated, December 6 2012
-%##################################################################
 
+% Updated: fprintf, documentation
 
-function [] = radialPlot(adj,i0)
+% IB: last updated, 3/24/14
 
-d=diameter(adj);
-if d==Inf; printf('The graph is not connected.\n'); return; end
+d=diameter(A);
+if d==Inf; fprintf('The graph is not connected.\n'); return; end
 
-if nargin==1; I=sortNodesBySumNeighborDegrees(adj); i0=I(1); end;
+if nargin==1; I=sortNodesBySumNeighborDegrees(A); i0=I(1); end;
 
-L=adj2adjL(adj);
+L=adj2adjL(A);
 
 circles={};   % per circle
 circle{i0}=0; % per node
 
 for k=1:d
-  kneigh = kminNeighbors(adj,i0,k);
+  kneigh = kminNeighbors(A,i0,k);
   if not(isempty(kneigh));
     circles{k}=kneigh;
     for nei=1:length(kneigh); circle{kneigh(nei)}=k; end
   end;
 end
   
-for i=1:size(adj,1); descendants{i} = 0; end;
+for i=1:size(A,1); descendants{i} = 0; end;
 
 for k=length(circles)-1:-1:1
   
@@ -91,7 +96,7 @@ set(gcf,'Color',[1 1 1],'Colormap',hot);   % Modify color scheme here
 map=colormap('hot');
 
 % plot with the angle and radius (circle) information
-for i=1:size(adj,1)
+for i=1:size(A,1)
   x = circle{i}*cos(start_angle{i}+range{i}/2);
   y = circle{i}*sin(start_angle{i}+range{i}/2);
   plot(x,y,'.','Color',map(mod(5*circle{i},length(map))+1,:)); hold off; hold on;
@@ -105,9 +110,9 @@ for c=1:length(circles)
 end
 
 % add the links between nodes
-for i=1:size(adj,1)
-  for j=i+1:size(adj,1)
-    if adj(i,j)>0
+for i=1:size(A,1)
+  for j=i+1:size(A,1)
+    if A(i,j)>0
       xi=circle{i}*cos(start_angle{i}+range{i}/2);
       yi=circle{i}*sin(start_angle{i}+range{i}/2);
       

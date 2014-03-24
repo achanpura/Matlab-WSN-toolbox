@@ -1,20 +1,22 @@
-%##################################################################
-% Degree-preserving rewiring of 1 given edge.
+function el = rewireThisEdge(el,i1,i2)
+%REWIRETHISEDGE Degree-preserving rewiring of 1 given edge.
 % Note 1: Assume unweighted undirected graph.
 % 
-% INPUTS: edge list, el (mx3) and the two nodes of the edge to be rewired.
-% OUTPUTS: rewired edge list, same size and same degree distribution
+% @input el, Mx3 edgelist of M edges 
+% @input il1, first node to be rewired
+% @input il2, second node to be re-wired
+% @output el, Mx3 edge list, same size and same degree distribution
 %
 % Note: There are cases when rewiring is not possible, while
 %       keeping the graph simple, so an empty edge list is returned.
 % 
 % Other routines used: edgeL2adj.m, kneighbors.m
-% GB: last updated, Oct 25, 2012
-%##################################################################
 
-function el = rewireThisEdge(el,i1,i2)
+% Updated: cleaned fprintf
+% IB: last updated, 3/24/14
 
-% check whether the edge can actually be rewired ..................
+
+%%  check whether the edge can actually be rewired
 adj = edgeL2adj(el);
 neighbors = [i1, i2];
 neighbors = [neighbors kneighbors(adj,i1,1)];
@@ -28,7 +30,7 @@ for e=1:length(el)
 end
 
 if isempty(disjoint_edges)
-  printf('cannot rewire this graph without adding a double edge or a loop\n');
+  fprintf('cannot rewire this graph without adding a double edge or a loop\n');
   el = [];
   return
 end
@@ -39,7 +41,7 @@ ind = [row];
 edge1=el(ind(1),:);
 
 
-% pick a random second edge from the disjoint edges
+%% pick a random second edge from the disjoint edges
 randind = randi([1,size(disjoint_edges,1)]);
 edge2=disjoint_edges(randind,:);
   
