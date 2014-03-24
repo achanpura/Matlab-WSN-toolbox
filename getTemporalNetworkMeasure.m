@@ -11,135 +11,64 @@ function [ ret, implemented_str ] = getTemporalNetworkMeasure( dyn_net, measure 
 %   @output ret, a T-length vector of network measures
 %   @output implemented_str [optional], a cell array of implemented method strings, for ease of method selection (e.g. to loop over all features)
 
+%   IB, Update: Testing on R2013a, parfor now only runs a small constant
+%   slower serially vs. regular 'for.' removed regular for 'if' blocks
+
+%   IB, last updated: 3/23/14
+
 [~,~,s] = size(dyn_net);
 
 %% preallocate
 ret = zeros(s, 1); 
 
 %% keep track of implemented methods for helper output
-implemented_str = sort({'max component', 'num components', 'average degree', 'average path', 'clustering coeff', 'density', 'radius', 'diameter', 'transitivity', 'clique number'})';
+implemented_str = sort({'max component', 'num components', 'average degree', 'average path', 'clustering coeff', 'density', 'radius', 'diameter', 'transitivity', 'clique number'});
 
 %% logic for measures
 if(exist('measure', 'var')) %if measure given
     if(strcmpi(measure, 'max component'))
-        if(~matlabpool('size'))
-            for i=1:s
-                [~, ret(i)] = connectedComponentMeasures( dyn_net(:,:, i) );
-            end
-        else
-            parfor i=1:s
-                [~, ret(i)] = connectedComponentMeasures( dyn_net(:,:, i) );
-            end
-            
+        parfor(i=1:s, matlabpool('size'))
+            [~, ret(i)] = connectedComponentMeasures( dyn_net(:,:, i) );
         end
     elseif(strcmpi(measure, 'num components'))
-        if(~matlabpool('size'))
-            for i=1:s
-                [ret(i), ~] = connectedComponentMeasures(dyn_net(:,:, i));
-            end
-        else
-            parfor i=1:s
-                [ret(i), ~] = connectedComponentMeasures(dyn_net(:,:, i));
-            end
-            
+        parfor(i=1:s, matlabpool('size'))
+            [ret(i), ~] = connectedComponentMeasures(dyn_net(:,:, i));
         end
     elseif(strcmpi(measure, 'clique number'))
-        if(~matlabpool('size'))
-            for i=1:s
-                [ret(i), ~] = cliqueNumber(dyn_net(:,:, i));
-            end
-        else
-            parfor i=1:s
-                [ret(i), ~] = cliqueNumber(dyn_net(:,:, i));
-            end
-            
-        end   
+        parfor(i=1:s, matlabpool('size'))
+            [ret(i), ~] = cliqueNumber(dyn_net(:,:, i));
+        end
     elseif(strcmpi(measure, 'average degree'))
-        if(~matlabpool('size'))
-            for i=1:s
-                ret(i) = averageDegree(dyn_net(:,:, i));
-            end
-        else
-            parfor i=1:s
-                ret(i) = averageDegree(dyn_net(:,:, i));
-            end
-            
+        parfor(i=1:s, matlabpool('size'))
+            ret(i) = averageDegree(dyn_net(:,:, i));
         end
-       
     elseif(strcmpi(measure, 'average path'))
-        if(~matlabpool('size'))
-            for i=1:s
-                ret(i) = averagePathLength(dyn_net(:,:, i));
-            end
-        else
-            parfor i=1:s
-                ret(i) = averagePathLength(dyn_net(:,:, i));
-            end
-            
+        parfor(i=1:s, matlabpool('size'))
+            ret(i) = averagePathLength(dyn_net(:,:, i));
         end
-      
-    
     elseif(strcmpi(measure, 'clustering coeff'))
-        if(~matlabpool('size'))
-            for i=1:s
-                [~, ret(i), ~] = clustCoeff(dyn_net(:,:,i));
-            end
-        else
-            parfor i=1:s
-                [~, ret(i), ~] = clustCoeff(dyn_net(:,:,i));
-            end
-            
+        parfor(i=1:s, matlabpool('size'))
+            [~, ret(i), ~] = clustCoeff(dyn_net(:,:,i));
         end
     elseif(strcmpi(measure, 'transitivity'))
-        if(~matlabpool('size'))
-            for i=1:s
-                [ret(i), ~, ~] = clustCoeff(dyn_net(:,:,i));
-            end
-        else
-            parfor i=1:s
-                [ret(i), ~, ~] = clustCoeff(dyn_net(:,:,i));
-            end
-            
-        end        
+        parfor(i=1:s, matlabpool('size'))
+            [ret(i), ~, ~] = clustCoeff(dyn_net(:,:,i));
+        end
     elseif(strcmpi(measure, 'density'))
-        if(~matlabpool('size'))
-            for i=1:s
-                ret(i) = edgeDensity(dyn_net(:,:,i));
-            end
-        else
-            parfor i=1:s
-                ret(i) = edgeDensity(dyn_net(:,:,i));
-            end
-            
-        end    
+        parfor(i=1:s, matlabpool('size'))
+            ret(i) = edgeDensity(dyn_net(:,:,i));
+        end
     elseif(strcmpi(measure, 'radius'))
-        if(~matlabpool('size'))
-            for i=1:s
-                [ret(i), ~] = radiusAndDiameter(dyn_net(:,:,i));
-            end
-        else
-            parfor i=1:s
-                [ret(i), ~] = radiusAndDiameter(dyn_net(:,:,i));
-            end
-            
-        end    
+        parfor(i=1:s, matlabpool('size'))
+            [ret(i), ~] = radiusAndDiameter(dyn_net(:,:,i));
+        end
     elseif(strcmpi(measure, 'diameter'))
-        if(~matlabpool('size'))
-            for i=1:s
-                [~, ret(i)] = radiusAndDiameter(dyn_net(:,:,i));
-            end
-        else
-            parfor i=1:s
-                [~, ret(i)] = radiusAndDiameter(dyn_net(:,:,i));
-            end
-            
-        end            
-        
+        parfor(i=1:s, matlabpool('size'))
+            [~, ret(i)] = radiusAndDiameter(dyn_net(:,:,i));
+        end
     else
         fprintf(['String ' measure ' not valid, implemented methods:\n' strjoin(implemented_str, '\n') '\n']);
-    end      
-
-        
+    end   
 else %if measure not given
     fprintf(['No network measure given, implemented methods:\n' strjoin(implemented_str, '\n') '\n']);
 end
