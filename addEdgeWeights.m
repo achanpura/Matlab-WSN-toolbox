@@ -1,17 +1,16 @@
-%##################################################################
-% Add multiple edges in an edge list
+function elc=addEdgeWeights(el)
+%ADDEDGEWEIGHTS Add multiple edges in an edge list
 % 
-% INPUTS: original (non-compact) edge list
-% OUTPUTS: final compact edge list (no row repetitions)
+% @input el, original (non-compact) edge list
+% @output elc, final compact edge list (no row repetitions)
 %
 % Example: [1 2 2; 2 2 1; 4 5 1] -> [1 2 3; 4 5 1]
-% GB: last updated, Sep 25 2012
-%##################################################################
 
-function elc=addEdgeWeights(el)
+% Updated: fixed visited vector for MATLAB.
+% IB: last updated, 3/23/2014
 
 el2=[el(:,1), el(:,2)]; % make the edge list searchable w/o the weights
-visited=[];             % mark visited edges
+visited=[0, 0];             % mark visited edges
 
 elc=[];
 for e=1:size(el,1)
