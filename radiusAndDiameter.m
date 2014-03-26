@@ -14,7 +14,12 @@ function [r, d] = radiusAndDiameter(A)
 rs = zeros(size(A, 1), 1);
 for i=1:size(A,1)
     d=simpleDijkstra(A,i);
-    rs(i) = max(d);
+    idx_good = d ~= Inf & d ~= 0;
+    if(any(idx_good))
+        rs(i) = max(d(idx_good));
+    else
+        rs(i) = NaN;
+    end
 end
-r = min(rs);
-d = max(rs);
+r = nanmin(rs);
+d = nanmax(rs);
